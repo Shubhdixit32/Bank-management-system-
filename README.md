@@ -1,15 +1,11 @@
-# Bank-management-system-
-Project
 design="This code is created by [SHUBH  DIXIT]"
-fdpas=0
-rdpas=0
 deposite=0
 fd=0
 rd=0
 interst=5
 #resistration (ON)
 name="shubh dixit"#input("enter your name here:")
-if (len(name)==0)or(name.isdigit()):     
+if (len(name)==0)or(name.isdigit()):  
     print("enter the name firs")
     name=0
 fname="rahul dixit"#input("entrer your father name here:") 
@@ -36,17 +32,23 @@ if (len(ph)!=10):
     print("i gess your phone number is incorrect")     
     ph=0
 print("your pass word must be in integer only")
-pas1=8826#int(input("enter your password:"))
+pas=""
+pas1=8826#int(input("enter your password here:"))
 pas2=8826#int(input("confirm your password:"))
-pas=0
-if (pas1==pas2):
+pas1,pas2=str(pas1),str(pas2)
+if (len(pas1)<4):
+    zpas=(4-len(pas1))*"0"
+    pas1=zpas+pas1
+if (len(pas2)<4):
+    zpas=(4-len(pas2))*"0"
+    pas2=zpas+pas2
+if (pas1!=pas2):
+    print("please recheck your password")
+elif (len(pas1)>4)and(len(pas2)>4):
+    print("you can enter 4 digit password only")
+elif (pas1==pas2):
     pas=pas1
-elif(pas1!=pas2):
-    print("enter the password carefully")
-    pas=0
-else:
-    pas=0
-print(pas)    
+    pas=int(pas)
 job="student"#input("what is your profession:") 
 if (len(job)==0):     
     print("fill the job first") 
@@ -96,15 +98,14 @@ if (name!=0)and(fname!=0)and(mname!=0)and(age!=0)and(date!=0)and(mounth!=0)and(y
                     print("password is incorrect")
                 elif(deposite<wedraw):
                     print("you dont have enough money in your account")
-            if(wed=="Fix Deposite")or(wed=="Fd")or(wed=="FD"):
+            if(wed=="fix Deposite")or(wed=="fd"):
                 print("your have to break your FD to wedraw money from your FD after break the amount will be transfored to your bank account")
                 f=input("do you really want to break your FD yes/no:")
                 f=f.casefold()
                 wfdpas=int(input("etner te your FD password:"))
-                if (f=="yes")and(wfdpas==fdpas):
+                if (f=="yes")and (wfdpas==fdpas):
                     deposite=deposite+fd
                     print("you have broken your FD successfully")
-                    fd=0
                 elif(wfdpas!=fdpas):
                     print("incorrect password")
                 elif(f=="no"):
@@ -180,16 +181,23 @@ if (name!=0)and(fname!=0)and(mname!=0)and(age!=0)and(date!=0)and(mounth!=0)and(y
             if(len(fdno)==0):
                 print("enter the nominee name first")
                 fdno=0
-            fdpas=0
+                fdpas=""
             fdpas1=int(input("enter your password here:"))
-            fdpas2=int(input("confirm the password:"))
-            if(fdpas1==fdpas2):
+            fdpas2=int(input("confirm your password:"))
+            fdpas1,fdpas2=str(fdpas1),str(fdpas2)
+            if (len(fdpas1)<4):
+                fdzpas=(4-len(fdpas1))*"0"
+                fdpas1=fdzpas+fdpas1
+            if (len(fdpas2)<4):
+                fdzpas=(4-len(fdpas2))*"0"
+                fdpas2=fdzpas+fdpas2
+            if (fdpas1!=fdpas2):
+                print("please recheck your password")
+            elif (len(fdpas1)>4)and (len(fdpas2)>4):
+                print("you can enter 4 digit password only")
+            elif (fdpas1==fdpas2):
                 fdpas=fdpas1
-            elif(fdpas1!=fdpas2):
-                print("enter password carefully")
-                fdpas=0
-            else:
-                fdpas=0
+                fdpas=int(fdpas)
             fdt=0
             fdt=int(input("enter the time period of your FD(in years):"))
             if (fdt>5):
@@ -220,16 +228,23 @@ if (name!=0)and(fname!=0)and(mname!=0)and(age!=0)and(date!=0)and(mounth!=0)and(y
                 print("enter the correct phone number ")
                 rdph=0
             rdno=input("enter the name of your nominee:")
-            rdpas=0
+            rdpas=""
             rdpas1=int(input("enter your password here:"))
-            rdpas2=int(input("confirm the password:"))
-            if(rdpas1==rdpas2):
+            rdpas2=int(input("confirm your password:"))
+            rdpas1,rdpas2=str(rdpas1),str(rdpas2)
+            if (len(rdpas1)<4):
+                rdzpas=(4-len(rdpas1))*"0"
+                rdpas1=rdzpas+rdpas1
+            if (len(rdpas2)<4):
+                rdzpas=(4-len(rdpas2))*"0"
+                rdpas2=rdzpas+rdpas2
+            if (rdpas1!=rdpas2):
+                print("please recheck your password")
+            elif (len(rdpas1)>4)and (len(rdpas2)>4):
+                print("you can enter 4 digit password only")
+            elif (rdpas1==rdpas2):
                 rdpas=rdpas1
-            elif(rdpas1!=rdpas2):
-                print("enter password carefully")
-                rdpas=0
-            else:
-                rdpas=0
+                rdpas=int(rdpas)
             rdt=int(input("enter the time period of your RD(in years):"))
             rdd=int(input("do you want to deposite some money in your RD:"))
             if (rdd==0):
@@ -288,40 +303,40 @@ if (name!=0)and(fname!=0)and(mname!=0)and(age!=0)and(date!=0)and(mounth!=0)and(y
             if (loanr=="home loan"):
                 if(loan>=1000000)and (loan<2000000):
                     if (income>=10000)and (income<50000):
-                        loant=
+                        loant=0
                     elif (income>=50000)and (income<100000):
-                        loant=
+                        loant=0
                     elif (income>=100000) and(income<500000):
-                        loant=
+                        loant=0
                     elif (income>=500000):
-                        loant=
+                        loant=0
                 elif (loan>=2000000)and (loan<3000000):
                         if (income>=10000)and (income<50000):
-                            loant=
+                            loant=0
                         elif (income>=50000) and(income<100000):
-                            loant=
+                            loant=0
                         elif (income>=100000) and(income<500000):
-                            loant=
+                            loant=0
                         elif (income>=500000):
-                            loant=
-                    elif(loan>=3000000) and(loan<4000000):
+                            loant=0
+                elif(loan>=3000000) and(loan<4000000):
                         if(income>=10000) and(income<50000):
-                            loant=
+                            loant=0
                         elif(income>=50000) and(income<100000):
-                            loant=
+                            loant=0
                         elif(income>=100000) and(income<500000):
-                            loant=
+                            loant=0
                         elif(income>=500000):
-                            loant=
-                    elif(loan>=4000000) and(loan<=5000000):
+                            loant=0
+                elif(loan>=4000000) and(loan<=5000000):
                         if (income>=10000) and(income<50000):
-                            loant=
+                            loant=0
                         elif(income>=50000) and(income<100000):
-                            loant=
+                            loant=0
                         elif(income>=100000) and(income<500000):
-                            loant=
+                            loant=0
                         elif(income>=500000):
-                            loant=
+                            loant=0
                         l=(loan)/loant
                         l=l/30
                         import math
